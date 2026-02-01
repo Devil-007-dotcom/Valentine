@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: #ffe6eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+h2 {
+  margin: 15px 0;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: #ddd;
+  position: absolute;
+}
+
+#msg {
+  display: none;
+  margin-top: 15px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <img src="me.jpg">
+  <h2>Will you be my Valentine? 💖</h2>
+  <p>— from your <b>Milu 🐻</b></p>
+
+  <div class="buttons">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <div id="msg">😌 Okay okay… only YES left now</div>
+</div>
+
+<script>
+let count = 0;
+const noBtn = document.getElementById("noBtn");
+const msg = document.getElementById("msg");
+const yesBtn = document.getElementById("yesBtn");
+
+function moveNo() {
+  count++;
+
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+
+  if (count >= 10) {
+    noBtn.style.display = "none";
+    msg.style.display = "block";
+  }
+}
+
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+noBtn.addEventListener("click", moveNo);
+
+yesBtn.addEventListener("click", () => {
+  window.location.href = "yes.html";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      background: #ffe6eb;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      width: 90%;
+      max-width: 360px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      margin: 10px 0;
+    }
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 60px;
+    }
+    button {
+      padding: 10px 22px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background: #ddd;
+      position: absolute;
+      left: 0;
+    }
+    .milu {
+      font-size: 14px;
+      color: #777;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="./me.jpg" alt="Me">
+
+    <h2>Nirali, will you be my Valentine? 💖</h2>
+    <div class="milu">— from your Milu 🐻💌</div>
+
+    <div class="buttons">
+      <button id="no" onmouseover="moveNo()">No</button>
+      <button id="yes" onclick="goYes()">Yes</button>
+    </div>
+  </div>
+
+  <script>
+    function moveNo() {
+      const btn = document.getElementById("no");
+      btn.style.left = Math.random() * 200 + "px";
+      btn.style.top = Math.random() * 20 + "px";
+    }
+
+    function goYes() {
+      window.location.href = "yes.html";
+    }
+  </script>
+</body>
+</html>

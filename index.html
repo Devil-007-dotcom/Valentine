@@ -74,11 +74,34 @@
   </div>
 
   <script>
-    function moveNo() {
-      const btn = document.getElementById("no");
-      btn.style.left = Math.random() * 200 + "px";
-      btn.style.top = Math.random() * 20 + "px";
-    }
+let noCount = 0;
+
+function moveNo() {
+  const btn = document.getElementById("no");
+  const card = document.querySelector(".card");
+
+  noCount++;
+
+  if (noCount > 6) {
+    btn.innerText = "Okay… Yes 🥺";
+    btn.onclick = goYes;
+    btn.style.background = "#ff4d6d";
+    btn.style.color = "white";
+    return;
+  }
+
+  const maxX = card.offsetWidth - btn.offsetWidth;
+  const maxY = card.offsetHeight - btn.offsetHeight;
+
+  btn.style.transition = "all 0.06s linear";
+  btn.style.left = Math.random() * maxX + "px";
+  btn.style.top = Math.random() * maxY + "px";
+}
+
+function goYes() {
+  window.location.href = "yes.html";
+}
+</script>
 
     function goYes() {
       window.location.href = "yes.html";
